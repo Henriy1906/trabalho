@@ -1,0 +1,16 @@
+{# usuario_apagar.html #}
+{% include "inc/head.html" %}
+
+    <h1>Apagar Documento</h1>
+    
+    <p>Tem certeza de que quer fazer isso?</p>
+    <p>Nunca mais será possível recuperar este documento!</p>
+
+    <form action="documentos_apagar.php" method="post">
+        <input type="hidden" value="{{documentos.iddocumentos}}">
+        <input type="submit" value="Apagar">
+    </form>
+    
+    <div><a href="boasvindas.php?idusuarios={{idusuarios}}">Cancelar</a></div>
+    
+{% include "inc/foot.html" %}
