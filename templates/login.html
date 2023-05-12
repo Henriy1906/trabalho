@@ -1,4 +1,4 @@
-
+{# 
 {% extends "inc/base.html" %}
 
 {% block titulo %}Usuario{% endblock %}
@@ -26,4 +26,64 @@
     </div>
 
 </form>
+{% endblock %} #}
+
+{% extends "inc/base.html" %}
+
+{% block titulo %}Usuario{% endblock %}
+
+{% block conteudo %}
+    {% if erro == 1 %}
+        Usuário e senha inválidos!
+    {% elseif erro == 3 %}
+        Tudo certo, só vai meu parceiro pois alterado foi sua senha 👀
+    {% endif %}
+    
+    <link rel="stylesheet" href="css/login.css">
+
+    <form class="form" action="login_verifica.php" method="post" autocomplete="off">
+        <div class="control">
+            <h1>Sign In</h1>
+        </div>
+        <div class="control block-cube block-input">
+            <input type="text" name="nome"  placeholder="usuário" />
+            <div class="bg-top">
+                <div class="bg-inner"></div>
+            </div>
+            <div class="bg-right">
+                <div class="bg-inner"></div>
+            </div>
+            <div class="bg">
+                <div class="bg-inner"></div>
+            </div>
+        </div>
+        <div class="control block-cube block-input">
+            <input name="password" type="password" placeholder="senha" />
+            <div class="bg-top">
+                <div class="bg-inner"></div>
+            </div>
+            <div class="bg-right">
+                <div class="bg-inner"></div>
+            </div>
+            <div class="bg">
+                <div class="bg-inner"></div>
+            </div>
+        </div>
+        <button class="btn block-cube block-cube-hover" type="submit">
+            <div class="bg-top">
+                <div class="bg-inner"></div>
+            </div>
+            <div class="bg-right">
+                <div class="bg-inner"></div>
+            </div>
+            <div class="bg">
+                <div class="bg-inner"></div>
+            </div>
+            <div class="text" value="acessar">enviar</div>
+        </button>
+    </form>
+    <div class="credits">
+        <a href="https://codepen.io/marko-zub/" target="_blank">My other codepens</a>
+    </div>
 {% endblock %}
+
