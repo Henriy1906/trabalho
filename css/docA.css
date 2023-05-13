@@ -1,0 +1,146 @@
+  /* Estilo geral */
+  *, ::after, ::before {
+    box-sizing: border-box;
+  }
+
+  html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  body {
+    background-color: #212121;
+    color: #fff;
+    font-family: monospace, serif;
+    letter-spacing: 0.05em;
+  }
+
+  .message-container {
+    text-align: center;
+    margin-bottom: 24px;
+  }
+
+  .button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+  }
+
+  .button:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: left 0.3s;
+    z-index: 1;
+  }
+
+  .button:hover:before {
+    left: 0;
+  }
+
+  .button:active {
+    background-color: #555;
+  }
+
+  .button:active:before {
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+
+  .button1 {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+  }
+
+  .button1:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: left 0.3s;
+    z-index: 1;
+  }
+
+  .button1:hover:before {
+    left: 0;
+  }
+
+  .button1:active {
+    background-color: #555;
+  }
+
+  .button1:active:before {
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+
+  .cancel-link {
+    display: inline-block;
+    margin-top: 12px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    transition: color 0.3s;
+    position: relative;
+  }
+
+  .cancel-link:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: left 0.3s;
+  }
+
+  .cancel-link:hover:before {
+    left: 0;
+  }
+
+  .gif-container {
+    text-align: center;
+  }
+  .button {
+    position: fixed;
+    bottom: 70px; /* Ajuste conforme necessário */
+    left: 30%;
+    transform: translateX(-50%);
+  }
+  .button1{
+    position: fixed;
+    left: 60%;
+    bottom: 70px; 
+    transform: translateX(-50%);
+  }

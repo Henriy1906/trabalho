@@ -1,0 +1,47 @@
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: monospace, serif;
+    letter-spacing: 0.05em;
+    text-align: center;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  h3 {
+    font-size: 24px;
+    margin: 10px 0;
+  }
+  
+  p {
+    margin: 20px 0;
+  }
+  
+  .links {
+    margin-top: 40px;
+  }
+  
+  .links a {
+    color: #fff;
+    text-decoration: none;
+    margin: 10px;
+  }
+  
+  .links a:hover {
+    text-decoration: underline;
+  }
+  
+  .mario {
+    margin-top: 40px;
+  }
+  
+  .mario img {
+    width: 200px;
+  }
+  

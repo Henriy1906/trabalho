@@ -1,16 +1,39 @@
 {# usuario_apagar.html #}
 {% include "inc/head.html" %}
+<link rel="stylesheet" href="css/docA.css">
+<!-- <div class="message-container"></div> -->
 
-    <h1>Apagar Documento</h1>
-    
-    <p>Tem certeza de que quer fazer isso?</p>
-    <p>Nunca mais será possível recuperar este documento!</p>
 
-    <form action="documentos_apagar.php" method="post">
-        <input type="hidden" value="{{documentos.iddocumentos}}">
-        <input type="submit" value="Apagar">
-    </form>
-    
-    <div><a href="boasvindas.php?idusuarios={{idusuarios}}">Cancelar</a></div>
-    
-{% include "inc/foot.html" %}
+
+
+  <form action="documentos_apagar.php" method="post">
+    <input type="hidden" value="{{documentos.iddocumentos}}">
+    <div><button type="submit" value="apagar" class="button1">Apagar</button></div>
+    <!-- <input class="button1" type="submit" value="Apagar"> -->
+  </form>
+
+  <div><a href="boasvindas.php?idusuarios={{idusuarios}}" class="button">Cancelar</a></div>
+  <div class="message-container"></div>
+  <div class="gif-container">
+    <img src="img/2.gif" alt="Pac-Man">
+  </div>
+  
+  <script>
+    const message = "Tem certeza de que quer fazer isso?\nNunca mais será possível recuperar este documento!";
+    const messageContainer = document.querySelector('.message-container');
+
+let index = 0;
+
+function displayNextLetter() {
+  if (index < message.length) {
+    const letter = message.charAt(index);
+    messageContainer.textContent += letter;
+    index++;
+    setTimeout(displayNextLetter, 80); // Ajuste o intervalo de tempo para controlar a velocidade da digitação
+  }
+}
+displayNextLetter();
+</script>
+
+
+  {% include "inc/foot.html" %}

@@ -1,0 +1,63 @@
+/* Estilos gerais */
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Press Start 2P', sans-serif;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.content {
+    margin-right: 50px;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+h2 {
+    font-size: 18px;
+}
+
+form {
+    margin-top: 20px;
+}
+
+input[type="file"] {
+    margin-bottom: 10px;
+}
+
+input[type="submit"] {
+    padding: 10px 20px;
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+a {
+    display: inline-block;
+    margin-top: 20px;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #000;
+    border: 1px solid #fff;
+}
+
+a:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+/* Imagens */
+.images img {
+    width: 80px;
+    margin: 10px;
+}

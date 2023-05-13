@@ -17,6 +17,7 @@ $sql = $pdo->prepare('SELECT * FROM documentos WHERE documentos.usuarios_idusuar
 $sql->execute([$id]);
 $documentos = $sql->fetchAll(PDO::FETCH_ASSOC);
 
+
 echo $twig->render('arquivos.html', [
     'documentos' => $documentos,
 ]);
