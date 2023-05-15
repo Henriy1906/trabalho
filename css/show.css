@@ -1,0 +1,69 @@
+/* Estilo Geral */
+html, body {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body {
+  background-color: #212121;
+  color: rgb(177, 174, 174);
+  font-family: monospace, serif;
+  letter-spacing: 0.05em;
+}
+
+table {
+  margin: 20px auto;
+  border-collapse: collapse;
+  border: 1px solid #333333;
+  background-color: #ffffff;
+  }
+  
+
+
+th,
+td {
+  padding: 10px;
+  border: 1px solid #333333;
+}
+
+thead {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+select,
+input[type="submit"] {
+  background-color: #333333;
+  color: #ffffff;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #555555;
+}
+
+td select {
+  width: 100%;
+}
+
+td input[type="submit"] {
+  width: 100%;
+  text-align: center;
+}
+/* 
+ .gif-container {
+  text-align: center;
+    margin-top: 50px;
+  } */
+
+  img {
+    display: block;
+    margin: 20px auto;
+}
