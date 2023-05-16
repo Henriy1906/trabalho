@@ -8,12 +8,8 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="" method="GET">
-        <input type="hidden" name="idusuarios" value="<?php echo $_GET['idusuarios']; ?>">
-        <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome">
-        <input type="submit" value="Buscar">
-    </form>
+    <input type="text" id="searchInput" placeholder="Pesquisar...">
+    <button type="button" onclick="searchFiles()">Pesquisar</button>
     <table border="1px solid black">
 
 <thead >
@@ -36,6 +32,32 @@
     {%endfor%}
 </tbody>
 </table>
+<script>
+    function searchFiles() {
+        var input = document.getElementById("searchInput").value.toUpperCase();
+        var table = document.getElementsByTagName("table")[0];
+        var rows = table.getElementsByTagName("tr");
 
+        for (var i = 0; i < rows.length; i++) {
+            var cells = rows[i].getElementsByTagName("td");
+            var found = false;
+
+            for (var j = 0; j < cells.length; j++) {
+                var cellText = cells[j].innerText.toUpperCase();
+
+                if (cellText.indexOf(input) > -1) {
+                    found = true;
+                    break;
+                }
+            }
+
+            if (found) {
+                rows[i].style.display = "";
+            } else {
+                rows[i].style.display = "none";
+            }
+        }
+    }
+</script>
 </body>
 </html>

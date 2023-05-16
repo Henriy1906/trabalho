@@ -7,22 +7,27 @@
     <title>Document</title>
 </head>
 <body>
+    <input type="text" id="searchInput" placeholder="Pesquisar...">
+    <button type="button" onclick="searchFiles()">Pesquisar</button>
     <table class="rwd-table">
 <h1>Arquivos Compartilhados com você:</h1>
 
-<thead >
+<thead>
     <tr>
         <th>Remetente</th>
         <th>Arquivo</th>
+        <th>Data do Upload</th>
+        <th>Download</th>
         <th>Excluir</th>
     </tr>
 </thead>
-
 <tbody>
-    {%for usr in usuarios%}
-        <tr >
-            <td >{{usr.usuario_nome}}</td>
-            <td>{{usr.nome}}</td>
+    {% for usr in usuarios %}
+        <tr>
+            <td>{{ usr.usuario_nome }}</td>
+            <td>{{ usr.nome }}</td>
+            <td>{{ usr.data}}</td>
+            <td><a href="{{ usr.caminho_arquivo }}" download>Baixar</a></td>
 
             {% if usr.permissao == 2 %}
             <td><a href="doc_ap.php?iddocumentos={{usr.iddocumentos}}&idusuarios={{usr.usuarios_idusuarios}}">Excluir</a></td>
@@ -40,5 +45,32 @@
 </tbody>
 </table>
 <a class="btn btn-2" href="boasvindas.php?idusuarios={{idusuarios}}">Voltar</a>
+<script>
+    function searchFiles() {
+        var input = document.getElementById("searchInput").value.toUpperCase();
+        var table = document.getElementsByTagName("table")[0];
+        var rows = table.getElementsByTagName("tr");
+
+        for (var i = 0; i < rows.length; i++) {
+            var cells = rows[i].getElementsByTagName("td");
+            var found = false;
+
+            for (var j = 0; j < cells.length; j++) {
+                var cellText = cells[j].innerText.toUpperCase();
+
+                if (cellText.indexOf(input) > -1) {
+                    found = true;
+                    break;
+                }
+            }
+
+            if (found) {
+                rows[i].style.display = "";
+            } else {
+                rows[i].style.display = "none";
+            }
+        }
+    }
+</script>
 </body>
 </html>

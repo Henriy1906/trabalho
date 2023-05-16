@@ -60,7 +60,9 @@ ENGINE = InnoDB;
 use pw;
 alter table compart_documentos ADD iddocumentos int not null;
 alter table compart_documentos ADD CONSTRAINT FK_id_documentos FOREIGN KEY(iddocumentos) REFERENCES documentos (iddocumentos); 
-
+ALTER TABLE `documentos` ADD `data` DATE AFTER `usuarios_idusuarios`;
+UPDATE `documentos` SET `data` = CURRENT_DATE();
+ALTER TABLE documentos ADD COLUMN caminho_arquivo VARCHAR(255) AFTER data;
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
