@@ -6,6 +6,8 @@ require('models/Documento.php');
 require('func/sanitize_filename.php');
 require('func/verifica_nome_arquivo.php');
 
+date_default_timezone_set('America/Sao_Paulo');
+
 $id = $_GET['idusuarios'];
 
 $allowedExtensions = ['pdf', 'doc', 'docx'];
@@ -15,12 +17,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !$_FILES['arquivo']['error']) {
     $fileExtension = pathinfo($_FILES['arquivo']['name'], PATHINFO_EXTENSION);
     $fileMimeType = $_FILES['arquivo']['type'];
 
-    
     if (!in_array(strtolower($fileExtension), $allowedExtensions)) {
         die('Apenas arquivos PDF, DOC e DOCX são permitidos.');
     }
 
-    
     if (!in_array($fileMimeType, $allowedMimeTypes)) {
         die('Apenas arquivos PDF, DOC e DOCX são permitidos.');
     }
@@ -36,6 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !$_FILES['arquivo']['error']) {
         'iddocumentos' => null,
         'nome' => $arquivo,
         'usuarios_idusuarios' => $id,
+        'data' => date('Y-m-d'), 
     ]);
 }
 
