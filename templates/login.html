@@ -1,4 +1,4 @@
-{# 
+<!-- {# 
 {% extends "inc/base.html" %}
 
 {% block titulo %}Usuario{% endblock %}
@@ -23,12 +23,11 @@
     </div>
     
 
-</form>
-{% endblock %} #}
+</form> -->
+<!-- {% endblock %} #} -->
 
-{% extends "inc/base.html" %}
 
-{% block titulo %}Usuario{% endblock %}
+<!-- {% block titulo %}Usuario{% endblock %}
 
 {% block conteudo %}
     {% if erro == 1 %}
@@ -36,12 +35,12 @@
     {% elseif erro == 3 %}
         Tudo certo, só vai meu parceiro pois alterado foi sua senha 👀
     {% endif %}
-    
+     -->
     <link rel="stylesheet" href="css/login.css">
 
     <form class="form" action="login_verifica.php" method="post" autocomplete="off">
         <div class="control">
-            <h1>Sign In</h1>
+            <h1>Login</h1>
         </div>
         <div class="control block-cube block-input">
             <input type="text" name="nome"  placeholder="usuário" />
