@@ -1,41 +1,14 @@
-<!-- {# 
 {% extends "inc/base.html" %}
 
-{% block titulo %}Usuario{% endblock %}
+{% block titulo %}usuario{% endblock %}
 
 {% block conteudo %}
 
 {% if erro == 1 %}
-    Usúario e senha inválidos!
-{% elseif erro == 3 %}
-    tudo certo, só vai meu parceiro pois alterado foi sua senha 👀
-        
+    Usuário ou senha inválidos!
+
 {% endif %}
-<form class="space-y-5" action="login_verifica.php" method="post">
-    <div class="mx-auto max-w-xs" >
-        <input  class="mb-1 block text-sm font-medium text-gray-700" type="text" name="nome" placeholder="usúario">
-    </div>
-    <div>
-        <input  class="mb-1 block text-sm font-medium text-gray-700" type="password" name="password" placeholder="senha">
-    </div>
-    <div>
-        <input type="submit" value="Acessar">
-    </div>
     
-
-</form> -->
-<!-- {% endblock %} #} -->
-
-
-<!-- {% block titulo %}Usuario{% endblock %}
-
-{% block conteudo %}
-    {% if erro == 1 %}
-        Usuário e senha inválidos!
-    {% elseif erro == 3 %}
-        Tudo certo, só vai meu parceiro pois alterado foi sua senha 👀
-    {% endif %}
-     -->
     <link rel="stylesheet" href="css/login.css">
 
     <form class="form" action="login_verifica.php" method="post" autocomplete="off">
