@@ -28,6 +28,6 @@ require('models/Usuario.php');
     ]);
 
 
-    header('location:usuarios.php');
+    header('location:login.php');
      
  
