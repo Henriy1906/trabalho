@@ -6,58 +6,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/arq.css">
     <title>Document</title>
+    <style>
+        e
+        /* Estilos personalizados */
+        .gif-wrapper {
+            position: relative;
+            margin-top: 200px;
+        }
+
+        /* .gif {
+            position: absolute;
+            bottom: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+        } */
+    </style>
 </head>
 <body>
+  
+
     <input type="text" id="searchInput" placeholder="Pesquisar...">
     <button type="button" onclick="searchFiles()">Pesquisar</button>
     <table border="1px solid black">
-
-<thead >
-    <tr>
-        <th>Nome do arquivo</th>
-        <th class="px-6 py-4 font-medium text-gray-900">Arquivo</th>
-    </tr>
-</thead>
-
-<tbody class="divide-y divide-gray-100 border-t border-gray-100">
-    {%for doc in documentos%}
-        <tr >
-            <td >{{doc.nome}}</td>
-            <td><a href="showU.php?iddocumentos={{doc.iddocumentos}}&idusuarios={{doc.usuarios_idusuarios}}">Compartilhar documento</a></td>
-        </tr>
-        {%else%}
+        <thead>
             <tr>
-            <td colspan = 2>Nenhum Arquivo adicionado</td>
+                <th>Nome do arquivo</th>
+                <th class="px-6 py-4 font-medium text-gray-900">Arquivo</th>
             </tr>
-    {%endfor%}
-</tbody>
-</table>
-<script>
-    function searchFiles() {
-        var input = document.getElementById("searchInput").value.toUpperCase();
-        var table = document.getElementsByTagName("table")[0];
-        var rows = table.getElementsByTagName("tr");
+        </thead>
+        <tbody class="divide-y divide-gray-100 border-t border-gray-100">
+            {% for doc in documentos %}
+                <tr>
+                    <td>{{ doc.nome }}</td>
+                    <td><a href="showU.php?iddocumentos={{ doc.iddocumentos }}&idusuarios={{ doc.usuarios_idusuarios }}">Compartilhar documento</a></td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="2">Nenhum Arquivo adicionado</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div class="gif-wrapper">
+        <img class="gif" src="img/run.gif" alt="GIF animado">
+    </div>
 
-        for (var i = 0; i < rows.length; i++) {
-            var cells = rows[i].getElementsByTagName("td");
-            var found = false;
+    <script>
+        function searchFiles() {
+            var input = document.getElementById("searchInput").value.toUpperCase();
+            var table = document.getElementsByTagName("table")[0];
+            var rows = table.getElementsByTagName("tr");
 
-            for (var j = 0; j < cells.length; j++) {
-                var cellText = cells[j].innerText.toUpperCase();
+            for (var i = 0; i < rows.length; i++) {
+                var cells = rows[i].getElementsByTagName("td");
+                var found = false;
 
-                if (cellText.indexOf(input) > -1) {
-                    found = true;
-                    break;
+                for (var j = 0; j < cells.length; j++) {
+                    var cellText = cells[j].innerText.toUpperCase();
+
+                    if (cellText.indexOf(input) > -1) {
+                        found = true;
+                        break;
+                    }
+                }
+
+                if (found) {
+                    rows[i].style.display = "";
+                } else {
+                    rows[i].style.display = "none";
                 }
             }
-
-            if (found) {
-                rows[i].style.display = "";
-            } else {
-                rows[i].style.display = "none";
-            }
         }
-    }
-</script>
+    </script>
 </body>
 </html>
