@@ -50,10 +50,11 @@ background-color: #222;
 
 td {
 padding: 4px;
+color: #333;
 }
 
 a {
-color: #fff;
+color: #333;
 text-decoration: none;
 }
 
