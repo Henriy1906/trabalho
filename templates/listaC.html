@@ -12,13 +12,13 @@
     <input type="text" id="searchInput" placeholder="Pesquisar...">
     <button type="button" onclick="searchFiles()">Pesquisar</button>
     <table class="rwd-table">
-<h1 style="padding-left: 490px;">Arquivos Compartilhados Comigo</h1>
+<h1 style="text-align: center;">Arquivos Compartilhados Comigo</h1>
 
 <thead>
     <tr>
         <th>Remetente</th>
         <th>Arquivo</th>
-        <th>Data do Upload</th>
+        <th>Data do compartilhamento</th>
         <th>Download</th>
         <th>Excluir</th>
     </tr>
@@ -29,10 +29,10 @@
             <td>{{ usr.usuario_nome }}</td>
             <td>{{ usr.nome }}</td>
             <td>{{ usr.data}}</td>
-            <td><a href="{{ usr.caminho_arquivo }}" download>Baixar</a></td>
+            <td><a class="botao" href="{{ usr.caminho_arquivo }}" download>Baixar</a></td>
 
             {% if usr.permissao == 2 %}
-            <td><a href="doc_ap.php?iddocumentos={{usr.iddocumentos}}&idusuarios={{usr.usuarios_idusuarios}}">Excluir</a></td>
+            <td><a class="botao" href="doc_ap.php?iddocumentos={{usr.iddocumentos}}&idusuarios={{usr.usuarios_idusuarios}}">Excluir</a></td>
             {% else %}
             <td>Sem premissão!</td>
             {% endif %}

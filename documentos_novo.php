@@ -17,12 +17,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !$_FILES['arquivo']['error']) {
     $fileExtension = pathinfo($_FILES['arquivo']['name'], PATHINFO_EXTENSION);
     $fileMimeType = $_FILES['arquivo']['type'];
 
-    if (!in_array(strtolower($fileExtension), $allowedExtensions)) {
-        die('Apenas arquivos PDF, DOC e DOCX são permitidos.');
-    }
-
-    if (!in_array($fileMimeType, $allowedMimeTypes)) {
-        die('Apenas arquivos PDF, DOC e DOCX são permitidos.');
+    if (!in_array(strtolower($fileExtension), $allowedExtensions) || !in_array($fileMimeType, $allowedMimeTypes)) {
+        $errorMessage = 'Apenas arquivos PDF, DOC e DOCX são permitidos!';
+        $errorStyle = 'color: #333333; font-weight: bold; font-size: 16px; text-align: center; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);';
+        $errorMessageHTML = '<p style="'.$errorStyle.'">'.$errorMessage.'</p>';
+        die($errorMessageHTML);
     }
 
     $arquivo = sanitize_filename($_FILES['arquivo']['name']);
